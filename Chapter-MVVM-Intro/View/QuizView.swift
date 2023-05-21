@@ -1,28 +1,14 @@
 import SwiftUI
 
+// MUST INCLUDE:
+// @State_Object_, not just @State (otherwise updates to properties isn't noticed by the view, even if the VM is ObsereableObject and properties are @Published
+
+
 struct QuizView: View {
     
     
-    @State var iCurrentQuestion = 0
-    @State var questions = [
-        "What is the capital of Assyria?",
-        "What… is the air-speed velocity of an unladen African swallow?",
-        "What… is the air-speed velocity of an unladen European swallow?",
-        "What is 2+2?"
-        
-    ]
-    @State var answers = [
-        "Nineveh",
-        "About 40 miles per hour",
-        "About 20 miles per hour",
-        "4"
-    ]
-    
-    enum CurrentStep {
-        case ASK_QUESTION
-        case MOVE_TO_NEXT
-    }
-    @State var currentStep = CurrentStep.ASK_QUESTION
+    @StateObject var theViewModel = QuizViewModel()
+
     
     var body: some View {
         VStack {
@@ -30,13 +16,13 @@ struct QuizView: View {
             Text("Quiz Program")
                 .font(.largeTitle)
             Spacer()
-            Text(questions[iCurrentQuestion])
+            Text(theViewModel.question())
                 .bold()
                 .font(.title)
             Spacer()
-            if currentStep == .MOVE_TO_NEXT {
+            if theViewModel.currentStep == .SHOWING_ANSWER {
                 Text("Answer:")
-                Text(answers[iCurrentQuestion])
+                Text(theViewModel.answer())
                     .bold()
                     .font(.title)
             } else {
@@ -49,14 +35,8 @@ struct QuizView: View {
                     .font(.title)
             }
             Spacer()
-            Button(currentStep == .ASK_QUESTION ? "Show Answer" : "Next Question") {
-                if currentStep == .ASK_QUESTION {
-                    currentStep = .MOVE_TO_NEXT
-                } else {
-                    currentStep = .ASK_QUESTION
-                    iCurrentQuestion = iCurrentQuestion + 1
-                    iCurrentQuestion = iCurrentQuestion % questions.count
-                }
+            Button(theViewModel.currentStep == .SHOWING_QUESTION ? "Show Answer" : "Next Question") {
+                theViewModel.moveToNextStep()
             }
             .foregroundColor(.white)
             .padding()
