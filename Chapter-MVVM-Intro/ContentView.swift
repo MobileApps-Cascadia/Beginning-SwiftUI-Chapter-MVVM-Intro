@@ -11,6 +11,15 @@ struct ContentView: View {
     var body: some View {
         VStack {
             QuizView()
+                .tabItem {
+                    Image(systemName: "1.circle")
+                    Text("Text Quiz")
+                }
+            ImageQuizView()
+                .tabItem {
+                    Image(systemName: "2.circle")
+                    Text("Image Quiz")
+                }
         }
         .padding()
     }

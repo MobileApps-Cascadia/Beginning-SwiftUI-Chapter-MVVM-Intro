@@ -22,7 +22,7 @@ class QuizViewModel : ObservableObject{
             currentStep = .SHOWING_ANSWER
         } else {
             currentStep = .SHOWING_QUESTION
-            iCurrentQuestion = (iCurrentQuestion + 1) % theModel.questions.count
+            iCurrentQuestion = (iCurrentQuestion + 1) % theModel.count
         }
         
         print("Button clicked - AFTER\n\tiCurrentQuestion: \(iCurrentQuestion)\n\tStep: \(String(currentStep.rawValue))")
@@ -31,14 +31,14 @@ class QuizViewModel : ObservableObject{
     var iCurrentQuestion = 0
     
     var count : Int {
-        return theModel.questions.count
+        return theModel.count
     }
     
     func question(  ) -> String {
-        return theModel.questions[iCurrentQuestion]
+        return theModel.question(number: iCurrentQuestion)
     }
     
     func answer( ) -> String {
-        return theModel.answers[iCurrentQuestion]
+        return theModel.answer(number: iCurrentQuestion)
     }
 }

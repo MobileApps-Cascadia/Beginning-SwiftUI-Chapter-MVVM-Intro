@@ -14,6 +14,7 @@
 		E4188A362A19B02700BA792F /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4188A352A19B02700BA792F /* Quiz.swift */; };
 		E4188A382A19B07100BA792F /* QuizVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4188A372A19B07100BA792F /* QuizVM.swift */; };
 		E4188A3D2A19B13E00BA792F /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4188A3C2A19B13E00BA792F /* QuizView.swift */; };
+		E4DAB9602A1A7FEF005540A6 /* ImageQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DAB95F2A1A7FEF005540A6 /* ImageQuiz.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		E4188A352A19B02700BA792F /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		E4188A372A19B07100BA792F /* QuizVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVM.swift; sourceTree = "<group>"; };
 		E4188A3C2A19B13E00BA792F /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		E4DAB95F2A1A7FEF005540A6 /* ImageQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageQuiz.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				E4188A3C2A19B13E00BA792F /* QuizView.swift */,
+				E4DAB95F2A1A7FEF005540A6 /* ImageQuiz.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				E4188A282A19AF1400BA792F /* Chapter_MVVM_IntroApp.swift in Sources */,
 				E4188A3D2A19B13E00BA792F /* QuizView.swift in Sources */,
 				E4188A362A19B02700BA792F /* Quiz.swift in Sources */,
+				E4DAB9602A1A7FEF005540A6 /* ImageQuiz.swift in Sources */,
 				E4188A382A19B07100BA792F /* QuizVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
