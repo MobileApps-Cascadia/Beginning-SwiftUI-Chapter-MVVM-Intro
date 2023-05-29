@@ -1,9 +1,5 @@
 import SwiftUI
 
-// MUST INCLUDE:
-// @State_Object_, not just @State (otherwise updates to properties isn't noticed by the view, even if the VM is ObsereableObject and properties are @Published
-
-
 struct QuizView: View {
     @State var iCurrentQuestion = 0
     @State var questions = [
@@ -32,13 +28,13 @@ struct QuizView: View {
             Text("Quiz Program")
                 .font(.largeTitle)
             Spacer()
-            Text(theViewModel.question())
+            Text(questions[iCurrentQuestion])
                 .bold()
                 .font(.title)
             Spacer()
-            if theViewModel.currentStep == .SHOWING_ANSWER {
+            if currentStep == .MOVE_TO_NEXT {
                 Text("Answer:")
-                Text(theViewModel.answer())
+                Text(answers[iCurrentQuestion])
                     .bold()
                     .font(.title)
             } else {
@@ -51,8 +47,14 @@ struct QuizView: View {
                     .font(.title)
             }
             Spacer()
-            Button(theViewModel.currentStep == .SHOWING_QUESTION ? "Show Answer" : "Next Question") {
-                theViewModel.moveToNextStep()
+            Button(currentStep == .ASK_QUESTION ? "Show Answer" : "Next Question") {
+                if currentStep == .ASK_QUESTION {
+                    currentStep = .MOVE_TO_NEXT
+                } else {
+                    currentStep = .ASK_QUESTION
+                    iCurrentQuestion = iCurrentQuestion + 1
+                    iCurrentQuestion = iCurrentQuestion % questions.count
+                }
             }
             .foregroundColor(.white)
             .padding()

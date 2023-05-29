@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct Chapter_MVVM_IntroApp: App {
     
-    @StateObject var theViewModel = UserCircleViewModel()
+    @StateObject var theViewModel = UserCircleViewModel(theModel: UserStore())
     
     var body: some Scene {
         WindowGroup {
