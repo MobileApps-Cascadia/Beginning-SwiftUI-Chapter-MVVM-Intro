@@ -10,12 +10,13 @@ import SwiftUI
 
 class UserCircleViewModel : ObservableObject{
     
-    @StateObject var theModel = UserStore()
+    var theModel: UserStore
     
     @Published var currentUser: User
     
-    init() {
-        currentUser = theModel.allUsers[0] // TODO: Gotta be better way to run setCurrentUser
+    init(theModel: UserStore) {
+        self.theModel = theModel
+        currentUser = theModel.allUsers[0] // Set initial current user
     }
     
     func getFullName() -> String {

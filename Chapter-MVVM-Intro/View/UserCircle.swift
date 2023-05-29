@@ -6,7 +6,7 @@ import SwiftUI
 
 struct UserCircleView: View {
 
-    @EnvironmentObject var theViewModel = UserCircleViewModel()
+    @EnvironmentObject var theViewModel: UserCircleViewModel
     @State private var isPresented: Bool = false
     
     var body: some View {
@@ -59,7 +59,13 @@ struct UserRow: View {
 }
 
 struct UserCircleViewPreviews: PreviewProvider {
+    
     static var previews: some View {
-        UserCircleView().padding()
+        VStack {
+            UserCircleView()
+                .padding()
+                .environmentObject(UserCircleViewModel(theModel: UserStore()))
+        }
+        
     }
 }

@@ -5,10 +5,8 @@ import SwiftUI
 
 
 struct QuizView: View {
-    
-    
-    @StateObject var theViewModel = QuizViewModel()
 
+    @EnvironmentObject var theQuizViewModel: QuizViewModel
     
     var body: some View {
         VStack {
@@ -16,13 +14,13 @@ struct QuizView: View {
             Text("Quiz Program")
                 .font(.largeTitle)
             Spacer()
-            Text(theViewModel.question())
+            Text(theQuizViewModel.question())
                 .bold()
                 .font(.title)
             Spacer()
-            if theViewModel.currentStep == .SHOWING_ANSWER {
+            if theQuizViewModel.currentStep == .SHOWING_ANSWER {
                 Text("Answer:")
-                Text(theViewModel.answer())
+                Text(theQuizViewModel.answer())
                     .bold()
                     .font(.title)
             } else {
@@ -35,8 +33,8 @@ struct QuizView: View {
                     .font(.title)
             }
             Spacer()
-            Button(theViewModel.currentStep == .SHOWING_QUESTION ? "Show Answer" : "Next Question") {
-                theViewModel.moveToNextStep()
+            Button(theQuizViewModel.currentStep == .SHOWING_QUESTION ? "Show Answer" : "Next Question") {
+                theQuizViewModel.moveToNextStep()
             }
             .foregroundColor(.white)
             .padding()
@@ -49,5 +47,6 @@ struct QuizView: View {
 struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
         QuizView()
+            .environmentObject(QuizViewModel())
     }
 }
