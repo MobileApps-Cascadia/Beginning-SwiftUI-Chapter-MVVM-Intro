@@ -44,7 +44,7 @@ struct UserRow: View {
     var body: some View {
         HStack {
             Spacer()
-            Text(user.firstName + " "  + user.lastName)
+            Text(user.getFullName())
                 .font(.largeTitle)
             Image(user.imageName)
                 .resizable()

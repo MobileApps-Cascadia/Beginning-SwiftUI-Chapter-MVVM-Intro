@@ -24,4 +24,8 @@ class User : Identifiable {
         lastName = l
         imageName = i
     }
+    
+    func getFullName() -> String {
+        return self.firstName + " " + self.lastName
+    }
 }
