@@ -1,8 +1,6 @@
 import SwiftUI
 
 struct QuizView: View {
-    
-    
     @State var iCurrentQuestion = 0
     @State var questions = [
         "What is the capital of Assyria?",

@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct Chapter_MVVM_IntroApp: App {
+    
+    @StateObject var theViewModel = UserCircleViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(theViewModel)
         }
     }
 }
