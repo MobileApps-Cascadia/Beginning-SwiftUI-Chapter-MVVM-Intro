@@ -5,6 +5,9 @@ import SwiftUI
 
 
 struct QuizView: View {
+    
+    
+    @StateObject var theViewModel = QuizViewModel()
 
     @EnvironmentObject var theQuizViewModel: QuizViewModel
     

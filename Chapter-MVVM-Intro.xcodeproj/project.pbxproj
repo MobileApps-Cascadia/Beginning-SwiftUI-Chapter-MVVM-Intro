@@ -186,6 +186,7 @@
 				E43ED8972A23B68C005093C5 /* UserCircle.swift in Sources */,
 				E4188A3D2A19B13E00BA792F /* QuizView.swift in Sources */,
 				E4188A362A19B02700BA792F /* Quiz.swift in Sources */,
+				E4DAB9602A1A7FEF005540A6 /* ImageQuiz.swift in Sources */,
 				E4188A382A19B07100BA792F /* QuizVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
