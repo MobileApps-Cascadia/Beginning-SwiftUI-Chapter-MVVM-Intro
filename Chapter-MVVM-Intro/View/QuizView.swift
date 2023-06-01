@@ -1,40 +1,20 @@
 import SwiftUI
 
 struct QuizView: View {
-    @State var iCurrentQuestion = 0
-    @State var questions = [
-        "What is the capital of Assyria?",
-        "What… is the air-speed velocity of an unladen African swallow?",
-        "What… is the air-speed velocity of an unladen European swallow?",
-        "What is 2+2?"
-        
-    ]
-    @State var answers = [
-        "Nineveh",
-        "About 40 miles per hour",
-        "About 20 miles per hour",
-        "4"
-    ]
-    
-    enum CurrentStep {
-        case ASK_QUESTION
-        case MOVE_TO_NEXT
-    }
-    @State var currentStep = CurrentStep.ASK_QUESTION
+    @StateObject var viewModel = QuizViewModel()
     
     var body: some View {
         VStack {
-
             Text("Quiz Program")
                 .font(.largeTitle)
             Spacer()
-            Text(questions[iCurrentQuestion])
+            Text(viewModel.currentQuestion.question)
                 .bold()
                 .font(.title)
             Spacer()
-            if currentStep == .MOVE_TO_NEXT {
+            if viewModel.currentStep == .MOVE_TO_NEXT {
                 Text("Answer:")
-                Text(answers[iCurrentQuestion])
+                Text(viewModel.currentQuestion.answer)
                     .bold()
                     .font(.title)
             } else {
@@ -47,20 +27,15 @@ struct QuizView: View {
                     .font(.title)
             }
             Spacer()
-            Button(currentStep == .ASK_QUESTION ? "Show Answer" : "Next Question") {
-                if currentStep == .ASK_QUESTION {
-                    currentStep = .MOVE_TO_NEXT
-                } else {
-                    currentStep = .ASK_QUESTION
-                    iCurrentQuestion = iCurrentQuestion + 1
-                    iCurrentQuestion = iCurrentQuestion % questions.count
-                }
+            Button(viewModel.buttonText) {
+                viewModel.handleButtonTap()
             }
             .foregroundColor(.white)
             .padding()
-            .background(.blue)
+            .background(Color.blue)
             .clipShape(RoundedRectangle(cornerRadius: 10))
-        }.padding()
+        }
+        .padding()
     }
 }
 
