@@ -11,7 +11,7 @@
 		E4188A2A2A19AF1400BA792F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4188A292A19AF1400BA792F /* ContentView.swift */; };
 		E4188A2C2A19AF1700BA792F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4188A2B2A19AF1700BA792F /* Assets.xcassets */; };
 		E4188A2F2A19AF1700BA792F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4188A2E2A19AF1700BA792F /* Preview Assets.xcassets */; };
-		E4188A362A19B02700BA792F /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4188A352A19B02700BA792F /* Quiz.swift */; };
+		E4188A362A19B02700BA792F /* QuestAns.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4188A352A19B02700BA792F /* QuestAns.swift */; };
 		E4188A382A19B07100BA792F /* QuizVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4188A372A19B07100BA792F /* QuizVM.swift */; };
 		E4188A3D2A19B13E00BA792F /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4188A3C2A19B13E00BA792F /* QuizView.swift */; };
 		E43ED8952A23B672005093C5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43ED8942A23B672005093C5 /* User.swift */; };
@@ -25,7 +25,7 @@
 		E4188A292A19AF1400BA792F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E4188A2B2A19AF1700BA792F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4188A2E2A19AF1700BA792F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E4188A352A19B02700BA792F /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		E4188A352A19B02700BA792F /* QuestAns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestAns.swift; sourceTree = "<group>"; };
 		E4188A372A19B07100BA792F /* QuizVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVM.swift; sourceTree = "<group>"; };
 		E4188A3C2A19B13E00BA792F /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		E43ED8942A23B672005093C5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		E4188A3B2A19B09400BA792F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E4188A352A19B02700BA792F /* Quiz.swift */,
+				E4188A352A19B02700BA792F /* QuestAns.swift */,
 				E43ED8942A23B672005093C5 /* User.swift */,
 			);
 			path = Model;
@@ -185,7 +185,7 @@
 				E43ED8952A23B672005093C5 /* User.swift in Sources */,
 				E43ED8972A23B68C005093C5 /* UserCircle.swift in Sources */,
 				E4188A3D2A19B13E00BA792F /* QuizView.swift in Sources */,
-				E4188A362A19B02700BA792F /* Quiz.swift in Sources */,
+				E4188A362A19B02700BA792F /* QuestAns.swift in Sources */,
 				E4188A382A19B07100BA792F /* QuizVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,7 +315,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chapter-MVVM-Intro/Preview Content\"";
-				DEVELOPMENT_TEAM = 3ZQJ35HR4K;
+				DEVELOPMENT_TEAM = 2N3K33KLKM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -344,7 +344,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chapter-MVVM-Intro/Preview Content\"";
-				DEVELOPMENT_TEAM = 3ZQJ35HR4K;
+				DEVELOPMENT_TEAM = 2N3K33KLKM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
