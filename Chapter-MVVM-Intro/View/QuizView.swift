@@ -1,21 +1,7 @@
 import SwiftUI
 
 struct QuizView: View {
-    @State var iCurrentQuestion = 0
-    @State var questions = [
-        "What is the capital of Assyria?",
-        "What… is the air-speed velocity of an unladen African swallow?",
-        "What… is the air-speed velocity of an unladen European swallow?",
-        "What is 2+2?"
-        
-    ]
-    @State var answers = [
-        "Nineveh",
-        "About 40 miles per hour",
-        "About 20 miles per hour",
-        "4"
-    ]
-    
+    @EnvironmentObject var theViewModel: QuizViewModel
     enum CurrentStep {
         case ASK_QUESTION
         case MOVE_TO_NEXT
@@ -28,13 +14,13 @@ struct QuizView: View {
             Text("Quiz Program")
                 .font(.largeTitle)
             Spacer()
-            Text(questions[iCurrentQuestion])
+            Text(theViewModel.currentQuestion.question)
                 .bold()
                 .font(.title)
             Spacer()
             if currentStep == .MOVE_TO_NEXT {
                 Text("Answer:")
-                Text(answers[iCurrentQuestion])
+                Text(theViewModel.currentQuestion.answer)
                     .bold()
                     .font(.title)
             } else {
@@ -52,8 +38,7 @@ struct QuizView: View {
                     currentStep = .MOVE_TO_NEXT
                 } else {
                     currentStep = .ASK_QUESTION
-                    iCurrentQuestion = iCurrentQuestion + 1
-                    iCurrentQuestion = iCurrentQuestion % questions.count
+                    theViewModel.updateToNextQuestion()
                 }
             }
             .foregroundColor(.white)
@@ -67,5 +52,7 @@ struct QuizView: View {
 struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
         QuizView()
+            .environmentObject(QuizViewModel(theModel: QuizStore())
+            )
     }
 }
